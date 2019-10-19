@@ -1,5 +1,8 @@
 FROM perl:5.30
 
+LABEL "maintainer"="FreeHackQuest Team <freehackquest@gmail.com>"
+LABEL "repository"="https://github.com/freehackquest/perl-catalyst"
+
 RUN apt update -qq && apt install -y \
     libpq-dev \
     libperl-dev \
@@ -96,4 +99,5 @@ RUN cpan install Data::Dumper \
 
 WORKDIR /root/server
 
+EXPOSE 3000 
 CMD ./server.pl
